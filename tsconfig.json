@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "ES2017",
+        "module": "commonjs",
+        // "moduleResolution":"commonjs",
+        "removeComments": false,
+        "sourceMap": true,
+        // "outDir": "./dist/server",
+        "watch": true,
+        "alwaysStrict": true
+    },
+    "lib": [
+        "ES7",
+        "ES2015.Promise",
+        "ES2015",
+        "ES2017"
+    ],
+    "include": [
+        "server/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
