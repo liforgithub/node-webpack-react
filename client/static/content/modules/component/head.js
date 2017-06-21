@@ -24,10 +24,16 @@ class Head extends Component {
                 <div id="headRight" className="head-right">
                     <ul>
                         <li>
-                            <p className="tx-a" title="">
+                            <a className="tx-a" title="">
                                 <img className="tx-img" width="35" height="35" src="//pic.qianmi.com/ejz/ejz2.0/img/mdygimg.png"/>
                                 <span className="tx-name">{CommonInfo.getUserInfo().nickName}</span>
-                            </p>
+                                <i className="iconfont icon-down"></i>
+                            </a>
+                            <div className="head-right-nav dis-n">
+                                <ol>
+                                    <li><a href="javascript:void(0);" title="退出登录" onClick={that._loginOut.bind(that)} style={{'fontSize': '10px'}}><i className="iconfont icon-Sign_out"></i>退出登录</a></li>
+                                </ol>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -38,6 +44,12 @@ class Head extends Component {
     _callBack(){
         let that = this;
         that.props.callBack();
+    }
+
+    _loginOut() {
+        let hostName = window.location.hostname;
+        $.cookie(hostName + 'userInfo', null, {path:"/"});
+        window.open('/', "_self");
     }
 }
 
